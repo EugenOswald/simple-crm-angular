@@ -1,6 +1,15 @@
 .dialog-add-user {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; */
+
+  .add-form-container {
+    margin: 16px;
+  }
+
+  .dialog-action-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
 }
