@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from 'src/models/user.class';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-dialog-add-user',
@@ -9,7 +9,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class DialogAddUserComponent {
   constructor(private firestore: AngularFirestore) {}
-  firestore: Firestore;
   user = new User();
   birthDate!: Date;
 
@@ -20,7 +19,8 @@ export class DialogAddUserComponent {
     this.firestore
       .collection('users')
       .add(this.user)
-      .then((result: any){
-      console.log('Adding user finished' result)})
+      .then((result: any) => {
+        console.log('Adding user finished', result);
+      });
   }
 }
